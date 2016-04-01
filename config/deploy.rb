@@ -42,7 +42,7 @@ set :normalize_asset_timestamps, false
 set :scm, :git
 set :scm_username, ENV['USER']
 set :scm_verbose, true
-set :repository, "git@github.com:mthanawala/icd9_resource_map.git"
+set :repository, "git@github.com:mthanawala/icd9-resource-map.git"
 set :git_enable_submodules, 1
 
 # tasks
