@@ -80,6 +80,6 @@ test:
 #
 production:
   <<: *default
-  database: fhir_api_production
-  username: fhir_api
-  password: <%= ENV['FHIR_API_DATABASE_PASSWORD'] %>
+  database: icd9_resource
+  username: icd9
+  password: icd9
