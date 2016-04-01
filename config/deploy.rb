@@ -2,7 +2,7 @@
 # RVM bootstrap
 #$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 require 'rvm/capistrano'
-set :rvm_ruby_string, '2.2.3'
+set :rvm_ruby_string, '2.1.2'
 set :rvm_type, :system
 set :keep_releases, 3
 
@@ -22,14 +22,8 @@ task :demo2 do
   role :worker, "demo2.healthloop.com"
   role :db, "demo2.healthloop.com", :primary => true
   set :deploy_to, "/var/www/icd9_resource_map/demo"
-  if ENV.has_key?('BRANCH')
-    p "Deploying to demo from branch: #{ENV['BRANCH']}"
-    set :branch, ENV['BRANCH']
-  else
-    puts 'Please specify a BRANCH to deploy to demo2 from: cap demo2 deploy BRANCH=...'
-    exit
-  end
-  set :rails_env, "demo"
+  set :branch, "master"
+  set :rails_env, "production"
 end
 
 # server details
