@@ -26,6 +26,10 @@ class Code < ActiveRecord::Base
   end
 
   def code_as_decimal
+    if self.code.start_with?('V')
+      return self.code.insert(3,'.')
+    end
+
     dcode = code.to_f
     while dcode >= 1000
       dcode = dcode / 10.to_f
