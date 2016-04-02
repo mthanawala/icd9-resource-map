@@ -1,0 +1,78 @@
+.element-left {
+    float: left;
+    margin-left: 4px;
+    width: 210px;
+    overflow: hidden;
+}
+
+.element-right {
+    float: left;
+    overflow: hidden;
+}
+
+.entitlement-left {
+   float: left;
+   width: 105px;
+   overflow: hidden;
+}
+.entitlement-center {
+    float: left;
+    width: 105px;
+    overflow: hidden;
+}
+.entitlement-right {
+    float: left;
+    width: 105px;
+    overflow: hidden;
+}
+.header {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 12px;
+    float: left;
+    color: #0c5299;
+    width: 100%;
+}
+
+.row {
+    float: left;
+    width: 100%;
+}
+
+.data {
+    float: left;
+    font-family: helvetica, arial, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    margin-left: 6px;
+    margin-bottom: 2px;
+}
+
+#medicare-phone-number {
+    font-family: helvetica, arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 80px;
+    margin-bottom: 10px;
+}
+
+.signature-prompt {
+    float: left;
+    width: 40px;
+    overflow: hidden;
+}
+
+.signature-line {
+    font-weight: bold;
+    float: left;
+    border-bottom: 1px #0c5299 solid;
+    width: 350px;
+    height: 25px;
+
+}
+
+#arrow {
+    float: left;
+    width: 25px;
+    overflow: hidden;
+}
+

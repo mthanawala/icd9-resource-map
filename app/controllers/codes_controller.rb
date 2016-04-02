@@ -6,6 +6,14 @@ class CodesController < ApplicationController
 
   def show
     code = Code.find_by_code(params[:id])
-    render :xml => (code.nil? ? Code.new.to_xml : code.to_xml)
+    if code.nil?
+      render :xml => Code.new.to_xml
+    else
+      code.url ||= code.computed_url
+      code.title ||= code.computed_title
+      code.summary ||= code.computed_summary
+      code.save!
+      render :xml => code.to_xml
+    end
   end
 end
