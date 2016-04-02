@@ -3,18 +3,32 @@ class Code < ActiveRecord::Base
   require 'uri'
 
   def computed_url
-    h = query_medline_plus
-    h.nil? ? "" : h['feed']['entry'][0]['link']['href']
+    h = get_best_medline_entry
+
+    h.nil? ? "" : h['link']['href']
   end
 
   def computed_title
-    h = query_medline_plus
-    h.nil? ? "" : h['feed']['entry'][0]['title']
+    h = get_best_medline_entry
+    h.nil? ? "" : h['title']
   end
 
   def computed_summary
+    h = get_best_medline_entry
+    h.nil? ? "" : h['summary']
+  end
+
+  def get_best_medline_entry
     h = query_medline_plus
-    h.nil? ? "" : h['feed']['entry'][0]['summary']
+    return nil if h.nil?
+
+    entries = h['feed']['entry']
+    if entries.class.name == 'Array'
+      return entries[0]
+    else
+      return entries
+    end
+
   end
 
   def query_medline_plus
