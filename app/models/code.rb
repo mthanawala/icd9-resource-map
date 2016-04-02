@@ -4,17 +4,17 @@ class Code < ActiveRecord::Base
 
   def computed_url
     h = query_medline_plus
-    h['feed']['entry'][0]['link']['href']
+    h.nil? ? "" : h['feed']['entry'][0]['link']['href']
   end
 
   def computed_title
     h = query_medline_plus
-    h['feed']['entry'][0]['title']
+    h.nil? ? "" : h['feed']['entry'][0]['title']
   end
 
   def computed_title
     h = query_medline_plus
-    h['feed']['entry'][0]['summary']
+    h.nil? ? "" : h['feed']['entry'][0]['summary']
   end
 
   def query_medline_plus
