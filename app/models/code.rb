@@ -12,7 +12,7 @@ class Code < ActiveRecord::Base
     h.nil? ? "" : h['feed']['entry'][0]['title']
   end
 
-  def computed_title
+  def computed_summary
     h = query_medline_plus
     h.nil? ? "" : h['feed']['entry'][0]['summary']
   end
