@@ -41,7 +41,7 @@ class Code < ActiveRecord::Base
 
   def code_as_decimal
     if self.code.start_with?('V')
-      dcode = self.code
+      dcode = self.code.dup
       return dcode.insert(3,'.')
     end
 
